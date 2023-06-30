@@ -41,20 +41,110 @@ html {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-top: 30px;
+  margin-top: 50px;
 }
+/* img and animations  */
+.photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+  transition: 1s ease-in-out;
+  cursor: pointer;
+}
+
 .img-profile {
   width: 100px;
   height: 100px;
   border-radius: 50%;
   object-position: center;
 }
+/*  circle 1 and animation */
+.circle-1 {
+  position: absolute;
+  background-color: transparent;
+  border: 2px solid;
+  height: 105px;
+  width: 105px;
+  border-radius: 50%;
+  border-color: #e4c3bd #e4c3bd #e4c3bd transparent;
+  animation: animation-circle-small 2s ease-in-out alternate-reverse;
+}
+@keyframes animation-circle-small {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+/*  circle 2 and animation */
+
+.circle-2 {
+  position: absolute;
+  background-color: transparent;
+  border: 2px solid;
+  height: 115px;
+  width: 115px;
+  border-radius: 50%;
+  border-color: #d39f96 transparent#d39f96 #d39f96;
+  animation: animation-circle-big 1.5s ease-in-out alternate-reverse;
+}
+@keyframes animation-circle-big {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#h1-name {
+  display: flex;
+  text-align: center;
+  font-size: 20px;
+  margin: 30px 0 0 0;
+}
+#p-description {
+  display: flex;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 0;
+  margin: 2px 0 40px 0;
+}
+
+/* buttons */
+
 #section-btn {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
+
+#follow-btn,
+#message-btn {
+  font-size: 14px;
+  background-color: rgb(236, 241, 245);
+  color: #643f38;
+  width: 160px;
+  height: 30px;
+  border-radius: 15px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #643f38;
+  font-family: "PT Sans", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: ease 0.5s;
+}
+#follow-btn:hover,
+#message-btn:hover {
+  color: #f6ecea;
+  background-color: #643f38;
+  border: 1px solid #f6ecea;
+}
+
 /* right side divs */
 
 .info-right {
@@ -65,38 +155,49 @@ html {
   height: 400px;
   margin: 0;
 }
-.posts {
+
+.posts,
+.likes,
+.followers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background-color: #e4c3bd;
   width: 100%;
   height: 32.7%;
   border-radius: 0 0 1px 1px;
+  cursor: pointer;
+  transition: ease 0.8s;
 }
-.likes {
-  background-color: #e4c3bd;
+.posts:hover,
+.likes:hover,
+.followers:hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #d39f96;
   width: 100%;
   height: 32.7%;
-  border-radius: 1px 1px 1px 1px;
-}
-.followers {
-  background-color: #e4c3bd;
-  width: 100%;
-  height: 32.7%;
-  border-radius: 1px 1px 0 0;
+  border-radius: 0 0 1px 1px;
+  cursor: pointer;
+  transition: ease 0.5s;
 }
 
-/* buttons */
-
-#section-btn {
-  padding: 10px;
-  font-family: "PT Sans", sans-serif;
+#h2-posts,
+#h2-likes,
+#h2-followers {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
 }
-
-#follow-btn {
-  font-size: 14px;
-  color: #643f38;
-  width: 160px;
-  height: 30px;
-  border-radius: 15px 15px;
-  margin-bottom: 20px;
-  border: 1px solid #643f38;
+#p-posts,
+#p-likes,
+#p-followers {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0;
 }
