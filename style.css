@@ -29,6 +29,7 @@ html {
   border-radius: 5px;
   box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
 }
+
 /* left side divs */
 
 .profil-left {
@@ -43,8 +44,10 @@ html {
   flex-direction: column;
   margin-top: 50px;
 }
+
 /* img and animations  */
-.photo {
+
+.photo-all {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,8 +63,17 @@ html {
   border-radius: 50%;
   object-position: center;
 }
+
 /*  circle 1 and animation */
-.circle-1 {
+
+.animated-circles {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  transition: 5s linear;
+}
+#circle-1 {
   position: absolute;
   background-color: transparent;
   border: 2px solid;
@@ -69,9 +81,9 @@ html {
   width: 105px;
   border-radius: 50%;
   border-color: #e4c3bd #e4c3bd #e4c3bd transparent;
-  animation: animation-circle-small 2s ease-in-out alternate-reverse;
+  animation: circle-small 2s ease-in-out alternate-reverse;
 }
-@keyframes animation-circle-small {
+@keyframes circle-small {
   0% {
     transform: rotate(0deg);
   }
@@ -79,9 +91,10 @@ html {
     transform: rotate(-360deg);
   }
 }
+
 /*  circle 2 and animation */
 
-.circle-2 {
+#circle-2 {
   position: absolute;
   background-color: transparent;
   border: 2px solid;
@@ -89,9 +102,15 @@ html {
   width: 115px;
   border-radius: 50%;
   border-color: #d39f96 transparent#d39f96 #d39f96;
-  animation: animation-circle-big 1.5s ease-in-out alternate-reverse;
+  animation: circle-big 2s ease-in-out alternate-reverse;
 }
-@keyframes animation-circle-big {
+
+.animated-circles:hover {
+  transition: 5s linear;
+  animation: circle-small 1.5s ease-in-out alternate-reverse infinite;
+}
+
+@keyframes circle-big {
   0% {
     transform: rotate(0deg);
   }
@@ -99,6 +118,8 @@ html {
     transform: rotate(360deg);
   }
 }
+
+/* rest of profil */
 
 #h1-name {
   display: flex;
